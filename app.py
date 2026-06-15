@@ -56,6 +56,12 @@ def index():
     return render_template("index.html")
 
 
+@app.route("/ping")
+def ping():
+    """Keep-alive endpoint voor UptimeRobot — houdt Render gratis-plan wakker."""
+    return "ok", 200
+
+
 @app.route("/generator", methods=["GET", "POST"])
 @login_required
 def generator():
